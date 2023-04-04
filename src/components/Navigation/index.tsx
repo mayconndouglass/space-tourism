@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 
 // Styles
 import { GlobalStyle } from '../../styles.global'
 import { ContainerNavigation, LiItem } from './styles'
 
-type routeType = {
-  label: 'Home' | 'Crew' | 'Destination' | 'Technology'
-  path: string
-}
+// Types
+import { routeType } from '../../types'
+
+// Contexts
+import { NavigationContext } from '../../contexts/NavigationContext'
 
 const routes: routeType[] = [
   {label: 'Home', path: '/'},
@@ -23,9 +24,13 @@ const getSelectedOption = () => {
 }
 
 export const Navigation = () => {
-  const [selectedOption, setSelectedOption] = useState(getSelectedOption())
   const handleOptionClick = (route: routeType) => setSelectedOption(route)
+  const { selectedOption, setSelectedOption } = useContext(NavigationContext)
   
+  useEffect(() => {
+    setSelectedOption(getSelectedOption() as routeType)
+  }, [])
+
   return (
     <ContainerNavigation>
       <ul>

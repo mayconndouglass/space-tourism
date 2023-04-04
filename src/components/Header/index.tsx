@@ -8,7 +8,7 @@ import menuMobile from '../../assets/shared/icon-hamburger.svg'
 import { Navigation } from '../Navigation'
 
 export const Header = () => {
-
+ 
   return (
     <S.ContainerArea>
       <S.ContainerLogo>

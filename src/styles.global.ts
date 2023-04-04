@@ -62,8 +62,6 @@ export const GlobalStyle = createGlobalStyle<BackgroundImage>`
     color: var(--white-color);
   }
 
-  
-
   body {
     ${({ routeSelected }) => {
       const selected = backgroundVariants[routeSelected]

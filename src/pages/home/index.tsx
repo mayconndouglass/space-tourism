@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
 import * as S from './styles'
-import { GlobalStyle } from '../../styles.global'
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { NavigationContext } from '../../contexts/NavigationContext'
+import { useContext } from 'react'
 
 export const Home = () => {
-  const [isClicked, setIsClicked] = useState(false)
-  console.log(isClicked)
+  const { setSelectedOption } = useContext(NavigationContext)
+
   return (
     <S.ContainerHome>
       <S.ContainerText>
@@ -30,18 +30,15 @@ export const Home = () => {
       <Link
         to={'/destination'}
       >
-        <S.ContainerButton onClick={() => setIsClicked(true)}>
-          <div className='content'>EXPLORER</div>
-        </S.ContainerButton>
+        <S.ContainerButton
+          onClick={() => setSelectedOption({
+            label: 'Destination',
+            path: '/destination'
+          })}
+        >
+         <div className='content'>EXPLORER</div>
+        </S.ContainerButton>        
       </Link>
-
-      {isClicked && (
-        <>
-          {console.log('entrou')}
-          {console.log(isClicked)}
-          <GlobalStyle routeSelected='Destination' />
-        </>
-      )}
     </S.ContainerHome>
   )
 }
