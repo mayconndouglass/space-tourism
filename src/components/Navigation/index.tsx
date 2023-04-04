@@ -12,17 +12,17 @@ type routeType = {
 
 const routes: routeType[] = [
   {label: 'Home', path: '/'},
-  {label: 'Crew', path: '/crew'},
   {label: 'Destination', path: '/destination'},
+  {label: 'Crew', path: '/crew'},
   {label: 'Technology', path: '/technology'},
 ]
 
-export const Navigation = () => {
-  const getSelectedOption = () => {
-    const currentPath = window.location.pathname
-    return routes.find(route => route.path === currentPath)
-  }
+const getSelectedOption = () => {
+  const currentPath = window.location.pathname
+  return routes.find(route => route.path === currentPath)
+}
 
+export const Navigation = () => {
   const [selectedOption, setSelectedOption] = useState(getSelectedOption())
   const handleOptionClick = (route: routeType) => setSelectedOption(route)
   
@@ -47,7 +47,6 @@ export const Navigation = () => {
           </NavLink>
         ))}
       </ul>
-    </ContainerNavigation>
-    
+    </ContainerNavigation>    
   )
 }

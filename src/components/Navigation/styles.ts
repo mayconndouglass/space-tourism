@@ -26,7 +26,7 @@ export const LiItem = styled.li<isSelectedProps>`
 
   &:hover {
     cursor: pointer;
-
+    
     &::before {
       visibility: visible;
       transition:  0.3s;
