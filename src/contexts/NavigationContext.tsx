@@ -1,16 +1,12 @@
-import { createContext, useState, ReactNode } from "react";
-import { routeType } from "../types";
+import { createContext, useState } from "react";
+import { routeType, ChildrenPropsType } from "../types";
 
-type ChildrenPropsType = {
-  children: ReactNode
-}
-
-type initialType = {
+type initialContextType = {
   selectedOption: routeType
   setSelectedOption: (route: routeType) => void
 }
 
-const initialState = {
+const initialContext = {
   selectedOption: {
     label: 'Home',
     path: '/'
@@ -18,10 +14,11 @@ const initialState = {
   setSelectedOption: (route: routeType) => {}
 }
 
-export const NavigationContext = createContext<initialType>(initialState)
+export const NavigationContext = createContext<initialContextType>(initialContext)
 
 export const NavigationProvider = ({children}: ChildrenPropsType) => {
-  const [selectedOption, setSelectedOption] = useState<routeType>(initialState.selectedOption)
+  const initialState = initialContext.selectedOption
+  const [selectedOption, setSelectedOption] = useState<routeType>(initialState)
 
   return (
     <NavigationContext.Provider value={{ selectedOption, setSelectedOption }}>
