@@ -1,8 +1,8 @@
 import * as S from './styles'
 
 // Images
-import logo from '../../assets/shared/logo.svg'
-import menuMobile from '../../assets/shared/icon-hamburger.svg'
+import logo from '../../../public/assets/shared/logo.svg'
+import menuMobile from '../../../public/assets/shared/icon-hamburger.svg'
 
 // Components
 import { Navigation } from '../Navigation'

@@ -1,6 +1,7 @@
 import { createContext } from "react";
-
 import {data} from '../data/data'
+
+// Types
 import { ChildrenPropsType } from "../types";
 
 export const DataContext = createContext(data)
