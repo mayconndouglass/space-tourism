@@ -24,10 +24,16 @@ export const ContainerData = styled.div`
 export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
+  width: 70%;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  
   @media (max-width: 375px) {
     margin-top: 32px;
     order: 2;
+    width: 100%;
   }
 `
 
