@@ -1,24 +1,27 @@
 import { useContext, useState } from "react"
+
+import { PageTitle } from "../../components/PageTitle"
+// Contexts
 import { DataContext } from "../../contexts/DataContext"
+
+// Styles
 import * as S from './styles'
 
 export const Destination = () => {
   const { destinations } = useContext(DataContext)
   const [destinationSelected, setDestinationSelected] = useState(destinations[0])
   const {name, images, description, distance, travel } = destinationSelected
-  
+
   return (
     <S.ContainerArea>
-      <S.PageTitle>
-        <h4><span>01</span> PICK YOUR DESTINATION</h4>
-      </S.PageTitle>
-
+      <PageTitle number={'01'} title={'PICK YOUR DESTINATION'}></PageTitle>
 
       <S.ContainerData>
         <S.PageMenu>
           <ul>
             {destinations.map(destination => (
               <S.LiItem
+                key={destination.name}
                 onClick={() => setDestinationSelected(destination)}
                 isSelected={destination.name === destinationSelected.name}
               >

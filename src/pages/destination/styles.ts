@@ -13,7 +13,7 @@ export const ContainerArea = styled.section`
   }
 `
 
-export const PageTitle = styled.div`
+/* export const PageTitle = styled.div`
   width: 382px;
   height: 34px;
 
@@ -53,7 +53,7 @@ export const PageTitle = styled.div`
       letter-spacing: 2.7px;
     }
   }
-`
+` */
 
 export const PageMenu = styled.div`
   margin: 64px auto 0;
