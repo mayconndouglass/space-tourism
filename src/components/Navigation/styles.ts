@@ -32,10 +32,28 @@ export const LiItem = styled.li<isSelectedProps>`
       transition:  0.3s;
     }
   }
+
+  @media (max-width: 375px) {
+    display: flex;
+
+    &::before {
+      visibility: hidden;
+    }
+
+    &:hover {   
+      &::before {
+        visibility: hidden;
+      }
+    }
+  }
     
 `
 
-export const ContainerNavigation = styled.nav`
+interface PropsMenuMobile {
+  isOpen: boolean
+}
+
+export const ContainerNavigation = styled.nav<PropsMenuMobile>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +92,8 @@ export const ContainerNavigation = styled.nav`
     }
 
     ul {
+      align-items: start;
+
       span {
         display: none;
       }
@@ -81,6 +101,25 @@ export const ContainerNavigation = styled.nav`
   }
 
   @media (max-width: 375px) {
-    display: none;
+    display: ${props => props.isOpen ? 'block' : 'none'};
+    padding: 118px 0 0 32px;
+    z-index: 1;
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    line-height: 19.5px;
+
+    ul {
+      flex-direction: column;
+      gap: 2rem;
+
+      span {
+        display: block;
+      }
+    }
   }
 `

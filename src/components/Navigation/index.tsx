@@ -23,7 +23,7 @@ const getSelectedOption = () => {
   return routes.find(route => route.path === currentPath)
 }
 
-export const Navigation = () => {
+export const Navigation = ({ isOpen }: { isOpen: boolean }) => {
   const handleOptionClick = (route: routeType) => setSelectedOption(route)
   const { selectedOption, setSelectedOption } = useContext(NavigationContext)
   
@@ -32,7 +32,7 @@ export const Navigation = () => {
   }, [])
 
   return (
-    <ContainerNavigation>
+    <ContainerNavigation isOpen={isOpen}>
       <ul>
         {routes.map((route, index) => (
           <NavLink

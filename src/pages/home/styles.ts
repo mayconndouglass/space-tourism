@@ -53,7 +53,7 @@ export const Subtitle = styled.div`
 
 export const Title = styled.div`
   height: 172px;
-  white: 445px;
+  width: 445px;
 
   h1 {
     font-family: var(--font-bellefair);

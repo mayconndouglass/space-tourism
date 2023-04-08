@@ -17,6 +17,10 @@ export const ContainerLogo = styled.div`
     width: 40px;
     height: 40px;
   }
+
+  @media (max-width: 375px) {
+    z-index: 10;
+  }
 `
 
 export const MenuMobile = styled.div`
@@ -29,5 +33,6 @@ export const MenuMobile = styled.div`
 
   @media (max-width: 375px) {
     display: block;
+    z-index: 10;
   }
 `
