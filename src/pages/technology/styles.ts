@@ -2,6 +2,15 @@ import styled from 'styled-components'
 
 export const ContainerArea = styled.section`
   padding: 76px 0 0 166.5px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (min-width: 1441px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+  }
 
   @media (max-width: 768px) {
     padding-left: 0;

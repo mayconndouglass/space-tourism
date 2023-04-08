@@ -4,6 +4,14 @@ export const ContainerArea = styled.section`
   width: 85%;
   margin: 0 auto;
   padding-top: 76px;
+  max-width: 1440px;
+
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+  }
 
   @media (max-width: 768px) {
     padding-top: 40px;

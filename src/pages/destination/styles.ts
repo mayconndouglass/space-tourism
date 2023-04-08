@@ -3,6 +3,14 @@ import styled from 'styled-components'
 export const ContainerArea = styled.section`
   width: 80%;
   margin: 72px auto 118px;
+  max-width: 1440px;
+
+  @media (min-width: 1441px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh;
+  }
 
   @media (max-width: 768px) {
     margin: 40px auto 60px;

@@ -6,6 +6,13 @@ export const ContainerHome = styled.section`
   align-items: center;
   width: 60%;
   margin: 200px auto 0;
+  max-width: 1440px;
+
+  @media (min-width: 1440px) {
+    height: 50vh;
+    justify-content: center;
+    gap: 400px;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;

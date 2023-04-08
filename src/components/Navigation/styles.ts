@@ -21,7 +21,7 @@ export const LiItem = styled.li<isSelectedProps>`
     width: 100%;
     bottom: -32px;
     background-color: var(--white-color);
-    visibility: ${props => props.isSelected ? 'visible' : 'hidden'}
+    visibility: ${props => props.isSelected ? 'visible' : 'hidden'};
   }
 
   &:hover {
@@ -29,7 +29,9 @@ export const LiItem = styled.li<isSelectedProps>`
     
     &::before {
       visibility: visible;
-      transition:  0.3s;
+      transition:  visibility 0.3s;
+      background-color: var(--white-color);
+      opacity: 0.4;
     }
   }
 
@@ -65,7 +67,11 @@ export const ContainerNavigation = styled.nav<PropsMenuMobile>`
   font-weight: 400;
   color: var(--white-color);
   position: relative;
-
+  /* transition: all 12s ease-in-out;
+  transform: translatex(100%); */
+  transition: all;
+  transition-duration: 300ms;
+  
   ul {
     display: flex;
     justify-content: center;
@@ -102,13 +108,18 @@ export const ContainerNavigation = styled.nav<PropsMenuMobile>`
 
   @media (max-width: 375px) {
     display: ${props => props.isOpen ? 'block' : 'none'};
+    transition: all;
+    transition-duration: 300ms;
+    right: ${props => (props.isOpen ? '0' : '-100%')};
+    /* transform: ${props => props.isOpen ? 'translatex(0)' : 'translatex(100%)'};
+    transition: transform 1s ease-in-out; */
     padding: 118px 0 0 32px;
     z-index: 1;
     position: absolute;
     width: 70%;
     height: 100vh;
     top: 0;
-    right: 0;
+    /* right: 0; */
     font-size: 16px;
     letter-spacing: 2.7px;
     line-height: 19.5px;

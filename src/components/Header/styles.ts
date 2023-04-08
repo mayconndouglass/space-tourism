@@ -5,6 +5,8 @@ export const ContainerArea = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
 `
 export const ContainerLogo = styled.div`
   background-color: var(--white-color);
