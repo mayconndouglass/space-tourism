@@ -1,3 +1,9 @@
+import * as S from './styles'
+
 export const NotFound = () => {
-  return <>Not Found Error 404</>
+  return (
+    <S.Container>
+      <h4>Not Found 404</h4>
+    </S.Container>
+  )
 }
