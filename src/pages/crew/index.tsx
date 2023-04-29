@@ -13,9 +13,9 @@ export const Crew = () => {
   const { crew } = useContext(DataContext)
   const [crewSelected, setCrewSelected] = useState(crew[0])
   const { role, name, bio, images } = crewSelected
-  
+
   return (
-   <S.ContainerArea>
+    <S.ContainerArea>
       <PageTitle number={'02'} title={'MEET YOUR CREW'} />
 
       <S.ContainerData>
@@ -23,17 +23,17 @@ export const Crew = () => {
           <S.Role><h4>{role.toUpperCase()}</h4></S.Role>
 
           <S.Name><h4>{name.toUpperCase()}</h4></S.Name>
-          
+
           <S.Bio><p>{bio}</p></S.Bio>
-        
+
           <S.ContainerLinks>
             {crew.map(crew => (
               <S.PointLink
-                  key={crew.name}
-                  onClick={() => setCrewSelected(crew)}
-                  isSelected={crew.name === crewSelected.name}
-                ></S.PointLink>
-              ))}
+                key={crew.name}
+                onClick={() => setCrewSelected(crew)}
+                isSelected={crew.name === crewSelected.name}
+              ></S.PointLink>
+            ))}
           </S.ContainerLinks>
         </S.ContainerInfo>
 
@@ -41,6 +41,6 @@ export const Crew = () => {
           <img src={images.webp} alt="" />
         </S.ContainerImage>
       </S.ContainerData>
-   </S.ContainerArea>
+    </S.ContainerArea>
   )
 }

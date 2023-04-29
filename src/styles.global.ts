@@ -14,26 +14,26 @@ import technologyTablet from '../public/assets/technology/background-technology-
 import technologyMobile from '../public/assets/technology/background-technology-mobile.jpg'
 
 interface BackgroundImage {
-  routeSelected: 'Home' | 'Crew' | 'Destination' | 'Technology'
+  routeSelected: 'home' | 'crew' | 'destination' | 'technology'
 }
 
 const backgroundVariants = {
-  Home: {
+  home: {
     desktop: homeDesktop,
     tablet: homeTablet,
     mobile: homeMobile
   },
-  Crew: {
+  crew: {
     desktop: crewDesktop,
     tablet: crewTablet,
     mobile: crewMobile
   },
-  Destination: {
+  destination: {
     desktop: destinationDesktop,
     tablet: destinationTablet,
     mobile: destinationMobile
   },
-  Technology: {
+  technology: {
     desktop: technologyDesktop,
     tablet: technologyTablet,
     mobile: technologyMobile
@@ -64,10 +64,10 @@ export const GlobalStyle = createGlobalStyle<BackgroundImage>`
 
   body {
     ${({ routeSelected }) => {
-      const selected = backgroundVariants[routeSelected]
-        || backgroundVariants.Home
-      
-      return css`
+    const selected = backgroundVariants[routeSelected]
+      || backgroundVariants.home
+
+    return css`
         background-image: url(${selected.desktop});
         background-size: cover;
         background-repeat: no-repeat;
@@ -81,7 +81,7 @@ export const GlobalStyle = createGlobalStyle<BackgroundImage>`
           background-image: url(${selected.mobile});
         }
       `;
-      }
-    }
+  }
+  }
   }
 `

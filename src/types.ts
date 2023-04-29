@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
 export type routeType = {
-  label: 'Home' | 'Crew' | 'Destination' | 'Technology'
+  label: 'home' | 'crew' | 'destination' | 'technology'
   path: string
 }
 

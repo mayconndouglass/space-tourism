@@ -12,10 +12,10 @@ import { routeType } from '../../types'
 import { NavigationContext } from '../../contexts/NavigationContext'
 
 const routes: routeType[] = [
-  {label: 'Home', path: '/'},
-  {label: 'Destination', path: '/destination'},
-  {label: 'Crew', path: '/crew'},
-  {label: 'Technology', path: '/technology'},
+  { label: 'home', path: '/' },
+  { label: 'destination', path: '/destination' },
+  { label: 'crew', path: '/crew' },
+  { label: 'technology', path: '/technology' },
 ]
 
 const getSelectedOption = () => {
@@ -26,9 +26,10 @@ const getSelectedOption = () => {
 export const Navigation = ({ isOpen }: { isOpen: boolean }) => {
   const handleOptionClick = (route: routeType) => setSelectedOption(route)
   const { selectedOption, setSelectedOption } = useContext(NavigationContext)
-  
+
   useEffect(() => {
-    setSelectedOption(getSelectedOption() as routeType)
+    const teste = getSelectedOption()
+    setSelectedOption(teste as routeType)
   }, [])
 
   return (
@@ -36,15 +37,15 @@ export const Navigation = ({ isOpen }: { isOpen: boolean }) => {
       <ul>
         {routes.map((route, index) => (
           <NavLink
-            key = {route.label}
-            to = {index === 0 ? '/' : `/${route.label}`}
+            key={route.label}
+            to={index === 0 ? '/' : `/${route.label}`}
           >
             {selectedOption && (
               <GlobalStyle routeSelected={selectedOption.label} />
             )}
 
             <LiItem
-              onClick = {() => handleOptionClick(route)}
+              onClick={() => handleOptionClick(route)}
               isSelected={route === selectedOption}
             >
               <span>{`0${index}`}</span> {route.label.toUpperCase()}
@@ -52,6 +53,6 @@ export const Navigation = ({ isOpen }: { isOpen: boolean }) => {
           </NavLink>
         ))}
       </ul>
-    </ContainerNavigation>    
+    </ContainerNavigation>
   )
 }
